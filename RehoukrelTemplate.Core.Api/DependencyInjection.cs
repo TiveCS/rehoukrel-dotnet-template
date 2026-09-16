@@ -14,9 +14,9 @@ public static class DependencyInjection
         where TDbContext : DbContext
     {
         services
-            .SetupDatabase<TDbContext>()
-            .SetupCqrs()
-            .SetupOpenApi();
+            .RegisterDatabase<TDbContext>()
+            .RegisterCqrs()
+            .RegisterOpenApi();
         
         return services;
     }
@@ -26,7 +26,7 @@ public static class DependencyInjection
         app
             .UseHttpsRedirection();
         
-        app.SetupScalar();
+        app.RegisterScalar();
         
         return app;
     }

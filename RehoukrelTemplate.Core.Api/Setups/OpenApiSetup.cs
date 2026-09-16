@@ -7,13 +7,13 @@ namespace RehoukrelTemplate.Core.Api.Setups;
 
 public static class OpenApiSetup
 {
-    public static IServiceCollection SetupOpenApi(this IServiceCollection services)
+    public static IServiceCollection RegisterOpenApi(this IServiceCollection services)
     {
         services.AddOpenApi();
         return services;
     }
 
-    public static WebApplication SetupScalar(this WebApplication app)
+    public static WebApplication RegisterScalar(this WebApplication app)
     {
         if (app.Environment.IsDevelopment())
         {
