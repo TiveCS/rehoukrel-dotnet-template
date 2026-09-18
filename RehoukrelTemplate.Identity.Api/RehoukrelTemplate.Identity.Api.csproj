@@ -17,4 +17,9 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\RehoukrelTemplate.Core.Api\RehoukrelTemplate.Core.Api.csproj" />
+      <ProjectReference Include="..\RehoukrelTemplate.Identity.Infra\RehoukrelTemplate.Identity.Infra.csproj" />
+    </ItemGroup>
+
 </Project>

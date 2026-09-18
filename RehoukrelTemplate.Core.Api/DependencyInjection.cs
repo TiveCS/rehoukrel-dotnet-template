@@ -2,23 +2,24 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using RehoukrelTemplate.Core.Api.Setups;
 
 namespace RehoukrelTemplate.Core.Api;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddServiceSetups<TDbContext>(
-        this IServiceCollection services, 
+    public static IHostApplicationBuilder AddServiceSetups<TDbContext>(
+        this IHostApplicationBuilder builder, 
         IConfiguration configuration)
         where TDbContext : DbContext
     {
-        services
-            .RegisterDatabase<TDbContext>()
-            .RegisterCqrs()
+        builder
+            .RegisterDatabase<TDbContext>("Postgres")
+            .RegisterMessaging()
             .RegisterOpenApi();
         
-        return services;
+        return builder;
     }
     
     public static WebApplication UseServiceSetups(this WebApplication app)

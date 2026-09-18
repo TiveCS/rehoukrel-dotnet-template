@@ -1,8 +1,14 @@
+using RehoukrelTemplate.Core.Api.Setups;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// builder.Services.AddOpenApi();
+
+builder.Services
+    .RegisterMessaging()
+    .RegisterOpenApi();
 
 var app = builder.Build();
 
@@ -32,6 +38,8 @@ app.MapGet("/weatherforecast", () =>
         return forecast;
     })
     .WithName("GetWeatherForecast");
+
+app.RegisterScalar();
 
 app.Run();
 

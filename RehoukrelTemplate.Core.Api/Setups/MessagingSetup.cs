@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace RehoukrelTemplate.Core.Api.Setups;
 
-public static class CqrsSetup
+public static class MessagingSetup
 {
-    public static IServiceCollection RegisterCqrs(
+    public static IServiceCollection RegisterMessaging(
         this IServiceCollection services,
         params Assembly[] assemblies)
     {

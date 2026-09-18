@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\RehoukrelTemplate.Core.Infra\RehoukrelTemplate.Core.Infra.csproj" />
+      <ProjectReference Include="..\RehoukrelTemplate.Hello.Application\RehoukrelTemplate.Hello.Application.csproj" />
+    </ItemGroup>
+
 </Project>
